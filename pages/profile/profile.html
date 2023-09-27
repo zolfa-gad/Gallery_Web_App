@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Welcome Home</title>
+  </head>
+  <body class="h-100 bg-color d-flex flex-column" id="body">
+    <!------------------------------------ main home background ------------------------>
+    <!-- <figure id="homeImage" class="vh-100 position-relative"></figure> -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark gap-3 shadow-lg">
+      <!----------------------------- logo image  ----------------------->
+      <a class="" href="#">
+        <figure id="logoImage" class="m-0 col-1 p-2">
+          <img src="../../images/Logo-Logo-Grayscale.svg" width="100px" />
+          <!-- <img src="images/unnamed.jpg" width="100px" /> -->
+        </figure>
+      </a>
+
+      <!--------------- section to collapse in medium screen --------------->
+      <section class="collapse navbar-collapse">
+        <div
+          class="d-flex justify-content-end px-2 align-items-center gap-3 w-100"
+        >
+          <!------------------------------- nav bar list tabs  -------------------------------->
+          <div
+            id="navTabList"
+            class="d-flex justify-content-center align-items-center list-unstyled rounded-2"
+          >
+            <li
+              onclick="onHomeNavigate()"
+              class="active-nav-tab fs-5 rounded-2 p-2 px-3"
+            >
+              <a href="#">Home</a>
+            </li>
+          </div>
+          <!---------------------------------- log button -------------------------->
+
+          <div>
+            <button
+              id="log-btn"
+              class="btn btn-outline-light fs-5 px-3 rounded-pill"
+              style="width: 120px"
+            >
+              Log In
+            </button>
+          </div>
+        </div>
+      </section>
+    </nav>
+    <!--------------------------- content -------------------->
+
+    <section class="container py-5">
+      <div
+        class="d-flex flex-column justify-content-center align-items-center gap-3"
+      >
+        <h2 id="greet" class="fs-1 fw-bolder p-2">Welcome</h2>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center p-3"
+        >
+          <figure
+            id="profile-logo"
+            class="rounded-circle bg-grey-dark m-0 d-flex justify-content-center align-items-center"
+            style="width: 150px; height: 150px"
+          >
+            <img
+              id="profile-logo"
+              src="../../images/anonymous-avatar-icon-25.jpg"
+              class="rounded-circle shadow-lg"
+              style="width: 170px; height: 170px"
+            />
+          </figure>
+
+          <h2 id="user-name" class="fs-1 fw-bolder pt-3">Name</h2>
+        </div>
+        <!----------------------------- grid images -------------------------->
+        <section
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <h4
+            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-lg-5 rounded-2"
+          >
+            Photos
+          </h4>
+
+          <div
+            id="photos-grid"
+            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pb-5 pt-3"
+          >
+            <!-- <h2 class="fs-2 fw-bold p-3">
+              You Does Not Have Favourite Photos Yet ...
+            </h2> -->
+          </div>
+        </section>
+
+        <!----------------------------- grid videos -------------------------->
+        <section
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <h4
+            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-lg-5 rounded-2"
+          >
+            Videos
+          </h4>
+
+          <div
+            id="videos-grid"
+            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pb-5 pt-3"
+          ></div>
+        </section>
+      </div>
+    </section>
+
+    <script src="./profile-script.js"></script>
+    <script src="../../bootstrap/bootstrap.bundle.js"></script>
+  </body>
+</html>

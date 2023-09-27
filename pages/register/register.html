@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Register</title>
+  </head>
+  <body class="h-100 bg-color">
+    <!------------------------------------ main home background ------------------------>
+    <!-- <figure id="homeImage" class="vh-100 position-relative"></figure> -->
+
+    <!-------------------------------- main section --------------------------------------->
+    <main id="registerContent" class="top-0 w-100 h-100 position-absolute">
+      <!-------------------------- paragraph main section -------------------------------->
+      <section
+        class="container h-100 d-flex justify-content-center align-items-center"
+      >
+        <div
+          class="bg-light rounded-3 shadow-lg bg-gradient col-md-8 d-flex flex-column justify-content-center align-items-center p-5 text-justify"
+        >
+          <h2 class="fs-1 fw-bolder text-blue-dark">Welcome</h2>
+          <form
+            onsubmit="userRegister(event)"
+            class="w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-start"
+          >
+            <!------------------------------ name input ------------------------->
+            <label class="fs-4 py-2" for="name-input">Name</label>
+            <input
+              id="name-input"
+              class="form-control form-control-lg mx-1"
+              type="name"
+              placeholder="Enter Your Name"
+            />
+            <span id="name-error" class="px-3 text-danger visually-hidden"
+              >Please Enter Your Name</span
+            >
+
+            <!------------------------------ email input ------------------------->
+            <label class="fs-4 py-2" for="email-input">Email</label>
+            <input
+              id="email-input"
+              class="form-control form-control-lg mx-1"
+              type="email"
+              placeholder="Enter Your Email"
+            />
+            <span id="email-error" class="px-3 text-danger visually-hidden"
+              >Please Enter Your Email</span
+            >
+
+            <!------------------------------ password input ------------------------->
+            <label class="fs-4 py-2" for="password-input">Password</label>
+            <div class="d-flex justify-content-center align-items-center w-100">
+              <input
+                id="password-input"
+                class="form-control form-control-lg mx-1"
+                type="password"
+                placeholder="Enter Your Password"
+              />
+              <span
+                class="border border-1 p-2 btn"
+                onclick="togglePassword('password')"
+              >
+                <i id="password-icon" class="fa fa-eye-slash fa-xl"></i
+              ></span>
+            </div>
+            <span id="password-error" class="px-3 text-danger visually-hidden"
+              >Please Enter Your Password</span
+            >
+
+            <!------------------------------ repassword input ------------------------->
+            <label class="fs-4 py-2" for="repassword-input"
+              >Re-enter Password</label
+            >
+            <div class="d-flex justify-content-center align-items-center w-100">
+              <input
+                id="repassword-input"
+                class="form-control form-control-lg mx-1"
+                type="password"
+                placeholder="Enter Your Password Again"
+              />
+              <span
+                class="border border-1 p-2 btn"
+                onclick="togglePassword('repassword')"
+              >
+                <i id="repassword-icon" class="fa fa-eye-slash fa-xl"></i
+              ></span>
+            </div>
+            <span id="repassword-error" class="px-3 text-danger visually-hidden"
+              >Please Enter Your Password</span
+            >
+
+            <!------------------------------ submit button ------------------------->
+            <button
+              class="btn btn-dark px-5 py-2 fs-5 align-self-center mt-4"
+              type="submit"
+            >
+              Register
+            </button>
+
+            <!------------------------------ span link ------------------------->
+            <div class="align-self-center pt-3">
+              <span>already have account</span>
+              <a
+                href="#"
+                class="fs-5 text-blue-dark px-2"
+                onclick="location.replace('../log-in/log-in.html')"
+                >Log In</a
+              >
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./register-script.js"></script>
+  </body>
+</html>

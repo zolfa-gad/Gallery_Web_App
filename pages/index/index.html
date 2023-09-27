@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <title>Welcome Home</title>
+  </head>
+  <body class="h-100 bg-color" id="body">
+    <!-------------------- nav bar section -------------------------->
+<div id="bodyTop"></div>
+    <nav
+      class="navbar navbar-expand-md navbar-dark bg-dark gap-3 shadow-lg fixed-top"
+    >
+      <!----------------------------- logo image  ----------------------->
+      <a class="" href="#">
+        <figure id="logoImage" class="m-0 col-1 p-2">
+          <img src="../../images/Logo-Logo-Grayscale.svg" width="100px" />
+          <!-- <img src="images/unnamed.jpg" width="100px" /> -->
+        </figure>
+      </a>
+
+      <!--------------------------- menu button -------------------->
+      <div class="px-2">
+        <button
+          class="navbar-toggler p-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!--------------- section to collapse in medium screen --------------->
+      <section class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          id="navMenu"
+          class="d-flex justify-content-between align-items-center gap-3 w-100"
+        >
+          <!-------------------------------- nav bar search ------------------------------------>
+          <div class="w-100 px-2 py-1">
+            <div
+              id="navSearchBar"
+              class="visually-hidden w-100 text-dark bg-color rounded-3 d-flex justify-content-between align-items-center p-1 px-2"
+            >
+              <select
+                onchange="onSelectChange(event)"
+                class="border border-dark bg-color form-select form-select-lg text-dark w-50"
+              >
+                <option value="Photos">&#xf03e; Photos</option>
+                <option value="Videos">&#xf03d; Videos</option>
+              </select>
+
+              <!--------------------------------- input search -------------------------------->
+              <input
+                id="navSearchInput"
+                type="search"
+                placeholder="Search What You Want"
+                aria-expanded="true"
+                class="form-control form-control-lg"
+              />
+              <div class="btn p-2 text-dark" id="searchIcon">
+                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+              </div>
+            </div>
+          </div>
+
+          <!------------------------------- nav bar list tabs  -------------------------------->
+          <div
+            id="navTabList"
+            class="d-flex justify-content-center align-items-center list-unstyled rounded-2 text-light"
+          >
+            <div
+              onclick="onNavTabClick(this)"
+              class="active-nav-tab nav-tab-item fs-5 rounded-2 p-2 px-3"
+            >
+              <span>Home</span>
+            </div>
+            <div
+              onclick="onNavTabClick(this)"
+              class="nav-tab-item fs-5 rounded-2 p-2 px-3"
+            >
+              <span>Photos</span>
+            </div>
+            <div
+              onclick="onNavTabClick(this)"
+              class="nav-tab-item fs-5 rounded-2 p-2 px-3"
+            >
+              <span>Videos</span>
+            </div>
+          </div>
+          <!---------------------------------- log button -------------------------->
+
+          <div>
+            <button
+              id="log-btn"
+              class="btn btn-outline-light fs-5 px-3 rounded-pill"
+              style="width: 120px"
+            >
+              Log In
+            </button>
+          </div>
+
+          <!---------------------------------- profile image -------------------------->
+
+          <div class="px-2">
+            <div
+              id="profileLogo"
+              class="rounded-circle bg-grey-dark m-0 d-flex justify-content-center align-items-center"
+              style="width: 65px; height: 65px"
+            >
+              <!-- <img
+                id="userImage"
+                src="images/anonymous-avatar-icon-25.jpg"
+                width="100%"
+                height="100%"
+                class="rounded-circle"
+              /> -->
+              <!-- <span id="userLetters" class="fs-5 fw-bold text-light">
+                UN
+              </span> -->
+            </div>
+          </div>
+          <!-- <div id="profile" class="px-2 m-0">
+            <figure
+              id="profileImage"
+              class="rounded-circle border border-2 m-0"
+            >
+              <img
+                src="images/anonymous-avatar-icon-25.jpg"
+                width="100%"
+                height="100%"
+                class="rounded-circle"
+              />
+              <span class="bg-blue-dark">lo</span>
+            </figure>
+          </div> -->
+        </div>
+      </section>
+    </nav>
+
+    <!------------------------------------ main home background ------------------------>
+    <figure id="homeImage" class="vh-100 position-relative"></figure>
+
+    <!-------------------------------- main section --------------------------------------->
+    <main id="homeContent" class="top-0 w-100 h-100 position-absolute">
+      <!-------------------------- paragraph main section -------------------------------->
+      <section class="container h-100 d-flex justify-content-center">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center h-100 gap-5 text-justify"
+        >
+          <!-------------------- home section details heading ---------------------------------->
+          <div
+            class="text-dark fs-1 fw-bolder text-center text-justify d-flex flex-column justify-content-center align-items-center"
+          >
+            <h2 class="fs-1 fw-bolder">Welcome To Your Vision</h2>
+            <p class="lead fs-3 pt-3 px-md-5">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+              illo, quisquam similique neque enim adipisci cupiditate cum
+              maiores, voluptatibus voluptas quod.
+            </p>
+          </div>
+
+          <!---------------------------- home section search bar  --------------------------->
+          <div
+            class="col-lg-7 bg-dark rounded-3 d-flex justify-content-between align-items-center p-1 px-2"
+          >
+            <select
+              onchange="onSelectChange(event)"
+              class="bg-dark form-select form-select-lg text-light w-50"
+            >
+              <!-- <option selected>Choose</option> -->
+
+              <option value="Photos">&#xf03e; Photos</option>
+              <option value="Videos">&#xf03d; Videos</option>
+            </select>
+
+            <input
+              id="homeSearchInput"
+              type="search"
+              placeholder="Search What You Want"
+              aria-expanded="true"
+              class="form-control form-control-lg text-light"
+            />
+            <div
+              class="btn p-2 text-light"
+              id="searchIcon"
+              onclick="onSearchClick('home')"
+            >
+              <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-------------------- tab bar for sections --------------------->
+    <section
+      id="homeTabList"
+      class="d-flex justify-content-center align-items-center p-4 list-unstyled gap-4 rounded-2 fs-5"
+    >
+      <li
+        class="active-home-tab home-tab-item rounded-2 p-2 px-3"
+        onclick="onHomeTabClick(this)"
+      >
+        <a href="#homeTabList">Photos</a>
+      </li>
+      <li
+        class="home-tab-item rounded-2 p-2 px-3"
+        onclick="onHomeTabClick(this)"
+      >
+        <a href="#homeTabList">Videos</a>
+      </li>
+    </section>
+
+    <!-------------------- pop up window for image --------------------->
+    <div id="pop-up-content">
+      <!-- <div id="image-pop-window" class="p-5 d-flex justify-content-end">
+        <section class=" ">
+          <div class="bg-blue-dark px-5 ounded-3">
+            <div
+              class="transform d-flex flex-column justify-content-center align-items-center px-5"
+            >
+              <figure id="photographer-image" class="m-0">
+                <img
+                  class="rounded-circle shadow-lg"
+                  src="../../images/anonymous-avatar-icon-25.jpg"
+                  style="width: 100px; height: 100px"
+                />
+              </figure>
+
+              <div id="photographer-name" class="fs-3 fw-bold p-3">
+                <span>Lorem ipsum</span>
+              </div>
+
+              <div id="photographer-alt" class="lead w-75 pb-4 text-center">
+                <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatem praesentium harum
+                </span>
+              </div>
+
+              <div class="image-pop d-flex flex-column col-10">
+                <span
+                  class="favourite-icon position-absolute p-3 align-self-end"
+                  onclick="toggleFavouriteIconButton(event, 'img', 'photos')"
+                >
+                  <i class="fa fa-heart fa-regular fs-1"></i>
+                </span>
+                <figure class="m-0 position-relative">
+                  <img
+                    class="rounded-2"
+                    src="../../images/Image_1.jpg"
+                    style="width: 100%; height: 100%"
+                  />
+                </figure>
+              </div>
+
+              <div class="align-self-end">
+                <button
+                  class="btn btn-outline-light fs-4 mt-4 mx-3 px-3"
+                  onclick="closePopUpWindow(event)"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> -->
+    </div>
+
+    <!----------------------------- grid images -------------------------->
+    <section id="homeGrid" class="container min-vh-100 position-relative">
+      <div
+        id="cardsItems"
+        class="d-flex flex-wrap gap-3 justify-content-center align-items-center pb-5 min-vh-100"
+      >
+        <span class="loader"></span>
+      </div>
+    </section>
+
+    <script src="./index-script.js"></script>
+    <script src="../../bootstrap/bootstrap.bundle.js"></script>
+  </body>
+</html>
+
+<!-- <div class="d-flex">
+      <div class="dropdown d-inline-block">
+        <button
+          id="chooseBtn"
+          class="btn btn-outline-light p-2 px-4 fs-5 d-flex justify-content-center align-items-center gap-3"
+        >
+          Choose <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content rounded-2 bg-light p-2 shadow">
+          <a
+            href="#"
+            class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
+            ><i class="fa-solid fa-image"></i> Photos</a
+          >
+          <a
+            href="#"
+            class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
+          >
+            <i class="fa-solid fa-video"></i> Videos</a
+          >
+        </div>
+      </div>
+      <input
+        id="searchBar"
+        type="text"
+        placeholder="Search What You Want"
+        class="form-control form-control-lg bg-grey-light"
+        aria-expanded="true"
+      />
+    </div> -->
+
+<!-- <div>
+      <button id="menuButton" class="btn text-light">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div> -->
+
+<!-- <div onclick="printInfo(this)"
+          class="card cardVideo rounded-1 p-2 bg-blue-light text-center d-flex justify-content-between align-items-center"
+        >
+          <div 
+          class="shadow-lg border border-1 border-secondary">
+            <video src="images/Image_2.jpg" />
+            <video controls style="width: 400px; height: 280px">
+              <source
+                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=164&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+              <source
+                src="https://player.vimeo.com/external/429489248.hd.mp4?s=63d65e605ca27190051060b338d7218bdd56da2c&profile_id=174&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+              <source
+                src="https://player.vimeo.com/external/429489248.hd.mp4?s=63d65e605ca27190051060b338d7218bdd56da2c&profile_id=175&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+              <source
+                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=139&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+              <source
+                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=165&oauth2_token_id=57447761"
+                type="video/mp4"
+              />
+              <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="d-flex flex-column">
+            <span class="fs-5">Lorem, ipsum dolor.</span>
+          </div>
+        </div> -->
+
+<!-- category button -->
+<!-- <button
+            id="navChooseBtn"
+            class="btn btn-grey-light p-2 px-3 fs-5 d-flex justify-content-center align-items-center gap-3"
+          >
+            Category
+            <i class="fa-solid fa-angle-down"></i>
+          </button> -->
+
+<!-- category list -->
+<!-- <div class="dropdown-content rounded-2 bg-light p-2 shadow">
+            <a
+              href="#"
+              class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
+              ><i class="fa-solid fa-image"></i> Photos</a
+            >
+            <a
+              href="#"
+              class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
+            >
+              <i class="fa-solid fa-video"></i> Videos</a
+            >
+          </div> -->
+
+<!-- <select name="category" value="Choose" id="navCategoryList">
+            <option value="Photos">Photos</option>
+            <option value="Videos">Videos</option>
+          </select> -->
