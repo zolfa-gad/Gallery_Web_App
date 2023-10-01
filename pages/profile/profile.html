@@ -11,10 +11,12 @@
     />
     <title>Welcome Home</title>
   </head>
-  <body class="h-100 bg-color d-flex flex-column" id="body">
+  <body class="h-100 bg-color d-flex flex-column" id="bodyProfile">
     <!------------------------------------ main home background ------------------------>
     <!-- <figure id="homeImage" class="vh-100 position-relative"></figure> -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark gap-3 shadow-lg">
+
+    <!------------------------------------ nav bar ------------------------>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark gap-3 shadow-lg ">
       <!----------------------------- logo image  ----------------------->
       <a class="" href="#">
         <figure id="logoImage" class="m-0 col-1 p-2">
@@ -23,22 +25,38 @@
         </figure>
       </a>
 
+      <!--------------------------- menu button -------------------->
+      <div class="px-2">
+        <button
+          class="navbar-toggler p-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
       <!--------------- section to collapse in medium screen --------------->
-      <section class="collapse navbar-collapse">
+      <section class="collapse navbar-collapse" id="navbarSupportedContent">
         <div
-          class="d-flex justify-content-end px-2 align-items-center gap-3 w-100"
+          id="navMenu"
+          class="d-flex justify-content-end align-items-center gap-3 w-100"
         >
           <!------------------------------- nav bar list tabs  -------------------------------->
           <div
             id="navTabList"
-            class="d-flex justify-content-center align-items-center list-unstyled rounded-2"
+            class="d-flex justify-content-center align-items-center list-unstyled rounded-2 text-light"
           >
-            <li
-              onclick="onHomeNavigate()"
-              class="active-nav-tab fs-5 rounded-2 p-2 px-3"
+            <div
+              onclick="onHomeNavigate(this)"
+              class="nav-tab-item fs-5 rounded-2 p-2 px-3"
             >
-              <a href="#">Home</a>
-            </li>
+              <span>Home</span>
+            </div>
           </div>
           <!---------------------------------- log button -------------------------->
 
@@ -54,13 +72,13 @@
         </div>
       </section>
     </nav>
-    <!--------------------------- content -------------------->
 
-    <section class="container py-5">
+    <!--------------------------- content -------------------->
+    <section class="container py-5" id="profileContent">
       <div
         class="d-flex flex-column justify-content-center align-items-center gap-3"
       >
-        <h2 id="greet" class="fs-1 fw-bolder p-2">Welcome</h2>
+        <!-- <h2 id="greet" class="fs-1 fw-bolder p-2">Welcome</h2> -->
 
         <div
           class="d-flex flex-column justify-content-center align-items-center p-3"
@@ -68,31 +86,45 @@
           <figure
             id="profile-logo"
             class="rounded-circle bg-grey-dark m-0 d-flex justify-content-center align-items-center"
-            style="width: 150px; height: 150px"
+            style="width: 120px; height: 120px"
           >
             <img
               id="profile-logo"
               src="../../images/anonymous-avatar-icon-25.jpg"
-              class="rounded-circle shadow-lg"
-              style="width: 170px; height: 170px"
+              class="rounded-circle shadow"
+              style="width: 122px; height: 122px"
             />
           </figure>
 
           <h2 id="user-name" class="fs-1 fw-bolder pt-3">Name</h2>
+
+          <div class="p-2 py-4 d-flex gap-lg-5 gap-2">
+            <span
+              class="border shadow bg-grey-dark p-2 px-4 rounded-3 fs-3 fst-italic"
+            >
+              <i class="fa fa-image"></i> <span id="photo-counter">12</span>
+            </span>
+            <span
+              class="border shadow bg-grey-dark p-2 px-4 rounded-3 fs-3 fst-italic"
+            >
+              <i class="fa fa-photo-video"></i>
+              <span id="video-counter">12</span>
+            </span>
+          </div>
         </div>
         <!----------------------------- grid images -------------------------->
         <section
-          class="d-flex flex-column justify-content-center align-items-center"
+          class="d-flex flex-column justify-content-center align-items-center gap-3 shadow border rounded-3 py-5 p-3 bg-light-opacity"
         >
           <h4
-            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-lg-5 rounded-2"
+            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-5 rounded-2"
           >
             Photos
           </h4>
 
           <div
             id="photos-grid"
-            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pb-5 pt-3"
+            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pt-3"
           >
             <!-- <h2 class="fs-2 fw-bold p-3">
               You Does Not Have Favourite Photos Yet ...
@@ -102,21 +134,31 @@
 
         <!----------------------------- grid videos -------------------------->
         <section
-          class="d-flex flex-column justify-content-center align-items-center"
+          class="d-flex flex-column justify-content-center align-items-center gap-3 shadow border rounded-3 py-5 p-3 bg-light-opacity"
         >
           <h4
-            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-lg-5 rounded-2"
+            class="title-text fs-3 fw-bolder bg-blue-light p-3 px-5  rounded-2"
           >
             Videos
           </h4>
 
           <div
             id="videos-grid"
-            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pb-5 pt-3"
+            class="d-flex flex-wrap gap-3 justify-content-center align-items-center pt-3"
           ></div>
         </section>
       </div>
     </section>
+
+    <!----------------------------- up button -------------------------->
+    <div id="go-up-button">
+      <button
+        class="btn bg-grey-dark rounded-circle visually-hidden"
+        style="width: 60px; height: 60px"
+      >
+        <i class="fa-solid fa-angles-up fa-xl"></i>
+      </button>
+    </div>
 
     <script src="./profile-script.js"></script>
     <script src="../../bootstrap/bootstrap.bundle.js"></script>

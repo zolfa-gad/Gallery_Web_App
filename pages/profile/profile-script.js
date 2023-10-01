@@ -2,6 +2,9 @@ const userName = document.getElementById("user-name");
 const photosGrid = document.getElementById("photos-grid");
 const videosGrid = document.getElementById("videos-grid");
 const logButton = document.getElementById("log-btn");
+const photoCount = document.getElementById("photo-counter");
+const videoCount = document.getElementById("video-counter");
+const upButton = document.getElementById("go-up-button");
 
 // const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
@@ -12,11 +15,25 @@ window.addEventListener("load", () => {
     currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     userName.innerText = `${currentUser.name}`;
   }
+
+  photoCount.innerText = currentUser.photos.length;
+  videoCount.innerText = currentUser.videos.length;
+
   setLogButtonText();
   displayPhotosCards();
   displayVideosCards();
 });
 
+window.addEventListener("scroll", function () {
+  console.log(window.scrollY);
+  if (window.scrollY >= window.innerHeight) {
+    upButton.children[0].classList.remove("visually-hidden");
+
+    console.log("visible");
+  } else {
+    upButton.children[0].classList.add("visually-hidden");
+  }
+});
 //--------------------------------- log button -----------------------------//
 function setLogButtonText() {
   if (currentUser == null) {
@@ -38,6 +55,15 @@ function setLogButtonText() {
   }
 }
 
+//--------------------------------- up button -----------------------------//
+upButton.addEventListener("click", function () {
+  document.getElementById("profileContent").scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "center",
+  });
+});
+
 //--------------------------------- display photo card -----------------------------//
 function displayPhotosCards() {
   let cartona = "";
@@ -45,7 +71,7 @@ function displayPhotosCards() {
 
   if (photosList.length == 0) {
     cartona =
-      '<h3 class="fs-3 p-3"> You Does Not Have Favourite Photos Yet ... </h3>';
+      '<h3 class="fs-3 p-3"> You Do Not Have Favourite Photos Yet ... </h3>';
   } else {
     for (let i = 0; i < photosList.length; i++) {
       console.log(photosList[i]);
@@ -57,7 +83,7 @@ function displayPhotosCards() {
   class="trash-icon rounded-3 p-2 position-absolute align-self-end"
 >
   <i
-    class="fa fa-trash text-danger fa-xl fs-2"
+    class="fa fa-trash text-light fa-lg fs-2"
     onclick="removeFavouritePhoto(event)"
   ></i>
 </div>
@@ -96,7 +122,7 @@ function displayVideosCards() {
 
   if (videosList.length == 0) {
     cartona =
-      '<h3 class="fs-3 p-3"> You Does Not Have Favourite Videos Yet ... </h3>';
+      '<h3 class="fs-3 p-3"> You Do Not Have Favourite Videos Yet ... </h3>';
   } else {
     for (let i = 0; i < videosList.length; i++) {
       let cartonaSources = "";
@@ -113,12 +139,12 @@ function displayVideosCards() {
   class="trash-icon rounded-3 p-2 position-absolute align-self-end"
 >
   <i
-    class="fa fa-trash text-danger fa-xl fs-2"
+    class="fa fa-trash text-light fa-lg fs-2"
     onclick="removeFavouriteVideo(event)"
   ></i>
 </div>
     <div class="shadow-lg border border-1 border-secondary">
-      <video onmouseenter='controlVideo(event,"play")' onmouseleave='controlVideo(event,"pause")' class="card-video" style="width: 400px; height: 280px" id = "${videosList[i].id}">
+      <video onmouseenter='controlVideo(event,"play")' onmouseleave='controlVideo(event,"pause")' class="card-video-profile" id = "${videosList[i].id}">
        ${cartonaSources}
         Your browser does not support the video tag.
       </video>
