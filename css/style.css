@@ -3,14 +3,14 @@
 :root {
   --black-color: #182020;
   --blue-light-color: #a8c0d8;
-  /* --blue-light-color: #98b0c8; */
-  /* --blue-dark-color: #445878; */
-  /* --blue-dark-color: #a8c0d8; */
   --blue-dark-color: #305078;
   --grey-light-color: #b8c0c0;
   --light-color: #f1f2f7;
-  /* --light-color: #eeeff7; */
   --grey-dark-color: #384850;
+  /* --light-color: #eeeff7; */
+  /* --blue-light-color: #98b0c8; */
+  /* --blue-dark-color: #445878; */
+  /* --blue-dark-color: #a8c0d8; */
 }
 
 /* ------------------------------- select font --------------------------------- */
@@ -26,8 +26,8 @@ h2,
 
 .text-justify {
   text-align: justify;
-  /* text-justify: auto; */
 }
+
 nav {
   z-index: 10;
 }
@@ -35,7 +35,6 @@ nav {
 /* ------------------------------- colors --------------------------------- */
 .bg-color {
   background-color: #e7f4fa;
-  /* background-color: #c0b8c8; */
 }
 
 .text-light {
@@ -45,9 +44,6 @@ nav {
 .text-blue-dark {
   color: var(--blue-dark-color);
 }
-/* .bg-black {
-  background-color: var(--black-color);
-} */
 
 .bg-grey-light {
   background-color: var(--grey-light-color);
@@ -87,22 +83,13 @@ nav {
   border: 2px var(--grey-dark-color) solid;
 }
 
-/* .bg-dark-blue {
-  background-color: var(--blue-dark-color);
-} */
-
-/* .text-light {
-  color: var(--light-color);
-} */
-
-/* .text-blue-light {
-  color: var(--blue-light-color);
-} */
+.bg-light-opacity {
+  background-color: rgb(255, 255, 255, 0.7);
+}
 
 /* ------------------------------- card image --------------------------------- */
 
 .card-image {
-  /* style = "width: 250px;height: 310px;"  */
   object-fit: cover;
   transition: 0.5s;
 }
@@ -110,7 +97,6 @@ nav {
 .card-image img {
   width: 280px;
   height: 390px;
-  /* style = "width: 250px;height: 310px;"  */
 }
 
 .card-user {
@@ -133,113 +119,64 @@ nav {
   opacity: 0.3;
 }
 
-.card:hover .favourite-icon {
-  opacity: 1;
-}
-
-/* .cardImage img {
-  width: 250px;
-  height: 310px;
-} */
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
 }
 /* ------------------------------- card video --------------------------------- */
 
-/* .cardVideo video {
-  width: 370px;
-  height: 250px;
+.card-video,
+.card-video-profile {
   object-fit: cover;
-} */
-
-.card-video {
-  /* width: 370px; */
-  /* height: 250px; */
-  object-fit: cover;
-  /* style="width: 400px; height: 280px" */
 }
 
-/* #photographer-image,
-#photographer-name {
-  position: relative;
-  top: -90px;
-  transform: translateY(-70px);
-} */
+.card-video-profile {
+  width: 400px;
+  height: 280px;
+}
+
 .transform {
   position: relative;
   top: -50px;
 }
 
-.profile-transform{
-  transform:  translateY(-100px);
-}
-
-.profile-transform-reverse{
-  transform:  translateY(100px);
-}
-
-/* #photographer-name {
-  position: relative;
-  top: -90px;
-
-  transform: translateY(-50px);
-} */
-
-.favourite-icon {
-  z-index: 20;
-  cursor: pointer;
-}
-
+.favourite-icon,
 .trash-icon {
   z-index: 20;
-  cursor: pointer;
 }
 
-.image-pop:hover .favourite-icon {
+.image-pop:hover .favourite-icon,
+.card:hover .favourite-icon {
   opacity: 1;
 }
 
-.image-pop {
+.image-pop,
+#profileLogo {
   object-fit: contain;
 }
 
 #image-pop-window {
-  /* width: 500px;
-height: 500px; */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+  background-color: rgb(0, 0, 0, 0.7);
 }
-
-/* #log-btn{
-  width: 200px;
-} */
 
 /* ------------------------------- home background --------------------------------- */
 
 #homeImage {
   background-image: url(../images/wallpaperflare.com_wallpaper_5.jpg);
-  /* background-image: url(../images/thumb-1920-1063929.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.8;
-  /* top: 80px; */
-  /* position: relative; */
 }
 
-#profileLogo {
-  /* width: 60px; */
-  /* height: 60px; */
-  /* background-image: url(../images/anonymous-avatar-icon-25.jpg); */
-  /* background-size: contain; */
-  /* background-repeat: no-repeat; */
-  object-fit: contain;
-}
-
-#profileLogo:hover {
+#profileLogo:hover,
+#navTabList div,
+.favourite-icon,
+.trash-icon {
   cursor: pointer;
 }
 
@@ -253,21 +190,11 @@ height: 500px; */
 #navTabList li a {
   text-decoration: none;
   color: var(--light-color);
-
-  /* background-color: var(--grey-dark-color); */
-  /* border-radius: 0.25rem; */
-}
-
-#navTabList div{
-  cursor: pointer;
 }
 
 #homeTabList li a {
   text-decoration: none;
   color: black;
-
-  /* background-color: var(--grey-dark-color); */
-  /* border-radius: 0.25rem; */
 }
 
 .active-home-tab {
@@ -283,11 +210,6 @@ height: 500px; */
 }
 
 /* ------------------------------- search --------------------------------- */
-
-/* #navSearchBar { */
-/* display: none; */
-/* visibility: hidden; */
-/* } */
 
 #homeSearchInput,
 #navSearchInput {
@@ -314,21 +236,45 @@ height: 500px; */
   object-fit: contain;
 }
 
+#name-input {
+  display: flex;
+}
+
+#go-up-button {
+  position: fixed;
+  top: 95%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+#go-up-button button {
+  opacity: 0.7;
+}
+
+#go-up-button button:hover {
+  opacity: 1;
+  color: white;
+}
+
+#bodyProfile {
+  background-image: url(../images/wallpaperflare.com_wallpaper_1.jpg);
+  background-size: cover;
+  background-repeat: repeat-y;
+  object-fit: cover;
+}
+
 /* ------------------------------- media query --------------------------------- */
 
 @media screen and (max-width: 480px) {
   #chooseBtn {
-    /* background-color: #98b0c8; */
     max-width: 50px;
   }
 
   .favourite-icon {
     opacity: 1;
   }
-  /* #profileImage {
-    display: none;
-    visibility: hidden;
-  } */
+
   #logoImage {
     min-width: 50px;
   }
@@ -336,20 +282,25 @@ height: 500px; */
     display: inline;
   }
 
-  /* display or undisplay button group */
+  .card-video-profile {
+    width: 280px;
+  }
+  #name-input {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
   .collapse #navMenu {
     flex-direction: column-reverse;
-    /* flex-wrap: wrap; */
   }
 
   .collapse #navTabList {
     flex-direction: column;
-    /* flex-wrap: wrap; */
   }
 }
+
 /* ------------------------------- loader --------------------------------- */
 
 .loader {
@@ -386,127 +337,3 @@ height: 500px; */
     box-shadow: 0 0 0 10px inset;
   }
 }
-
-/* .cardVideo{
-  height: 330px;
-  width: 330px;
-} */
-
-/* #logoImage { */
-/* max-height: "70px"; */
-/* width: 70px; */
-/* } */
-
-/* .cardImage:hover {
-  transform: scale(1.1);
-  z-index: 5;
-
-  cursor: pointer;
-} */
-
-/* .user-name { */
-/* width: 250px; */
-/* overflow: hidden; */
-/* z-index: 10; */
-/* transform: rotate(90deg) translate(85px,-145px); */
-/* transform: ; */
-/* } */
-
-/* #chooseBtn {
-  border-radius: 0.3rem 0px 0px 0.3rem;
-} */
-
-/* #searchBar {
-  border-radius: 0px 0.3rem 0.3rem 0px;
-} */
-
-/* @media screen and (max-width: 768px) {
-
-  #navChooseBtn {
-    background-color: #98b0c8;
-    max-width: 50px;
-  }
-} */
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media screen and (min-width: 600px) {} */
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* @media screen and (min-width: 768px) {} */
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* @media screen and (min-width: 992px) {} */
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media screen and (min-width: 1200px) {} */
-
-/* 320px — 480px: Mobile devices
-481px — 768px: iPads, Tablets
-769px — 1024px: Small screens, laptops
-1025px — 1200px: Desktops, large screens
-1201px and more —  Extra large screens, TV */
-
-/* #search + svg {
-  visibility: visible;
-} */
-/* #search:placeholder-shown + svg {
-  visibility: hidden;
-} */
-/* #searchBar + #searchIcon {
-  visibility: visible;
-} */
-/* #searchBar:placeholder-shown + #searchIcon {
-  visibility: hidden;
-} */
-
-/* #searchIcon{
-  position: absolute;
-  right: 0;
-} */
-
-/* .active-home-tab {
-  background-color: var(--grey-light-color);
-  color: black;
-  font-size: 2.5rem;
-} */
-
-/* .activeTab{
-  background-color: var(--grey-dark-color);
-  color: var(--light-color);
-} */
-
-/* .activeTab a{
-  color: rebeccapurple;
-} */
-
-/* .notActiveTab a{
-  color: rebeccapurple;
-} */
-
-/* .notActiveTab{
-  background-color: transparent;
-  color: black;
-} */
-
-/* .dropdown {
-  position: relative;
-} */
-
-/* Dropdown Content (Hidden by Default) */
-/* .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-} */
-
-/* .dropdown-content a:hover {
-  background-color: rgb(0, 0, 0, 0.2);
-  color: black;
-} */
-
-/* .dropdown:hover .dropdown-content {
-  display: block;
-} */

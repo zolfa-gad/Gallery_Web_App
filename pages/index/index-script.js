@@ -199,7 +199,7 @@ function displayPhotosCards(photosList) {
     class="card rounded-1 p-2 bg-grey-dark text-center d-flex justify-content-between align-items-center"
   >
     <div
-      class="favourite-icon rounded-3 p-2 position-absolute align-self-end"
+      class="favourite-icon rounded-3 p-2 position-absolute align-self-end text-light"
     >
       <i
         class="fa fa-heart fa-xl fs-2 ${iconClass}"
@@ -257,7 +257,7 @@ function displayVideosCards(videosList) {
     cartona += `<div
     class="card cardVideo rounded-1 p-2 bg-grey-dark text-center d-flex justify-content-between align-items-center"
     >
-    <div class="favourite-icon rounded-3 p-2 position-absolute align-self-end">
+    <div class="favourite-icon rounded-3 p-2 position-absolute align-self-end text-light">
       <i
     class="fa fa-heart fa-xl fs-2 ${iconClass}"
     onclick="toggleFavouriteIconButton(event,'video','videos')"
