@@ -13,7 +13,7 @@
   </head>
   <body class="h-100 bg-color" id="body">
     <!-------------------- nav bar section -------------------------->
-<div id="bodyTop"></div>
+    <div id="bodyTop"></div>
     <nav
       class="navbar navbar-expand-md navbar-dark bg-dark gap-3 shadow-lg fixed-top"
     >
@@ -21,7 +21,6 @@
       <a class="" href="#">
         <figure id="logoImage" class="m-0 col-1 p-2">
           <img src="../../images/Logo-Logo-Grayscale.svg" width="100px" />
-          <!-- <img src="images/unnamed.jpg" width="100px" /> -->
         </figure>
       </a>
 
@@ -83,12 +82,6 @@
               onclick="onNavTabClick(this)"
               class="active-nav-tab nav-tab-item fs-5 rounded-2 p-2 px-3"
             >
-              <span>Home</span>
-            </div>
-            <div
-              onclick="onNavTabClick(this)"
-              class="nav-tab-item fs-5 rounded-2 p-2 px-3"
-            >
               <span>Photos</span>
             </div>
             <div
@@ -117,33 +110,8 @@
               id="profileLogo"
               class="rounded-circle bg-grey-dark m-0 d-flex justify-content-center align-items-center"
               style="width: 65px; height: 65px"
-            >
-              <!-- <img
-                id="userImage"
-                src="images/anonymous-avatar-icon-25.jpg"
-                width="100%"
-                height="100%"
-                class="rounded-circle"
-              /> -->
-              <!-- <span id="userLetters" class="fs-5 fw-bold text-light">
-                UN
-              </span> -->
-            </div>
+            ></div>
           </div>
-          <!-- <div id="profile" class="px-2 m-0">
-            <figure
-              id="profileImage"
-              class="rounded-circle border border-2 m-0"
-            >
-              <img
-                src="images/anonymous-avatar-icon-25.jpg"
-                width="100%"
-                height="100%"
-                class="rounded-circle"
-              />
-              <span class="bg-blue-dark">lo</span>
-            </figure>
-          </div> -->
         </div>
       </section>
     </nav>
@@ -178,8 +146,6 @@
               onchange="onSelectChange(event)"
               class="bg-dark form-select form-select-lg text-light w-50"
             >
-              <!-- <option selected>Choose</option> -->
-
               <option value="Photos">&#xf03e; Photos</option>
               <option value="Videos">&#xf03d; Videos</option>
             </select>
@@ -223,61 +189,7 @@
     </section>
 
     <!-------------------- pop up window for image --------------------->
-    <div id="pop-up-content">
-      <!-- <div id="image-pop-window" class="p-5 d-flex justify-content-end">
-        <section class=" ">
-          <div class="bg-blue-dark px-5 ounded-3">
-            <div
-              class="transform d-flex flex-column justify-content-center align-items-center px-5"
-            >
-              <figure id="photographer-image" class="m-0">
-                <img
-                  class="rounded-circle shadow-lg"
-                  src="../../images/anonymous-avatar-icon-25.jpg"
-                  style="width: 100px; height: 100px"
-                />
-              </figure>
-
-              <div id="photographer-name" class="fs-3 fw-bold p-3">
-                <span>Lorem ipsum</span>
-              </div>
-
-              <div id="photographer-alt" class="lead w-75 pb-4 text-center">
-                <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatem praesentium harum
-                </span>
-              </div>
-
-              <div class="image-pop d-flex flex-column col-10">
-                <span
-                  class="favourite-icon position-absolute p-3 align-self-end"
-                  onclick="toggleFavouriteIconButton(event, 'img', 'photos')"
-                >
-                  <i class="fa fa-heart fa-regular fs-1"></i>
-                </span>
-                <figure class="m-0 position-relative">
-                  <img
-                    class="rounded-2"
-                    src="../../images/Image_1.jpg"
-                    style="width: 100%; height: 100%"
-                  />
-                </figure>
-              </div>
-
-              <div class="align-self-end">
-                <button
-                  class="btn btn-outline-light fs-4 mt-4 mx-3 px-3"
-                  onclick="closePopUpWindow(event)"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div> -->
-    </div>
+    <div id="pop-up-content"></div>
 
     <!----------------------------- grid images -------------------------->
     <section id="homeGrid" class="container min-vh-100 position-relative">
@@ -289,110 +201,17 @@
       </div>
     </section>
 
+    <!----------------------------- up button -------------------------->
+    <div id="go-up-button">
+      <button
+        class="btn bg-grey-dark rounded-circle visually-hidden"
+        style="width: 60px; height: 60px"
+      >
+        <i class="fa-solid fa-angles-up fa-xl"></i>
+      </button>
+    </div>
+
     <script src="./index-script.js"></script>
     <script src="../../bootstrap/bootstrap.bundle.js"></script>
   </body>
 </html>
-
-<!-- <div class="d-flex">
-      <div class="dropdown d-inline-block">
-        <button
-          id="chooseBtn"
-          class="btn btn-outline-light p-2 px-4 fs-5 d-flex justify-content-center align-items-center gap-3"
-        >
-          Choose <i class="fa-solid fa-angle-down"></i>
-        </button>
-        <div class="dropdown-content rounded-2 bg-light p-2 shadow">
-          <a
-            href="#"
-            class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
-            ><i class="fa-solid fa-image"></i> Photos</a
-          >
-          <a
-            href="#"
-            class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
-          >
-            <i class="fa-solid fa-video"></i> Videos</a
-          >
-        </div>
-      </div>
-      <input
-        id="searchBar"
-        type="text"
-        placeholder="Search What You Want"
-        class="form-control form-control-lg bg-grey-light"
-        aria-expanded="true"
-      />
-    </div> -->
-
-<!-- <div>
-      <button id="menuButton" class="btn text-light">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div> -->
-
-<!-- <div onclick="printInfo(this)"
-          class="card cardVideo rounded-1 p-2 bg-blue-light text-center d-flex justify-content-between align-items-center"
-        >
-          <div 
-          class="shadow-lg border border-1 border-secondary">
-            <video src="images/Image_2.jpg" />
-            <video controls style="width: 400px; height: 280px">
-              <source
-                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=164&oauth2_token_id=57447761"
-                type="video/mp4"
-              />
-              <source
-                src="https://player.vimeo.com/external/429489248.hd.mp4?s=63d65e605ca27190051060b338d7218bdd56da2c&profile_id=174&oauth2_token_id=57447761"
-                type="video/mp4"
-              />
-              <source
-                src="https://player.vimeo.com/external/429489248.hd.mp4?s=63d65e605ca27190051060b338d7218bdd56da2c&profile_id=175&oauth2_token_id=57447761"
-                type="video/mp4"
-              />
-              <source
-                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=139&oauth2_token_id=57447761"
-                type="video/mp4"
-              />
-              <source
-                src="https://player.vimeo.com/external/429489248.sd.mp4?s=880800d7b47326d52929551977532974b3a6c8f0&profile_id=165&oauth2_token_id=57447761"
-                type="video/mp4"
-              />
-              <source src="movie.ogg" type="video/ogg">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          <div class="d-flex flex-column">
-            <span class="fs-5">Lorem, ipsum dolor.</span>
-          </div>
-        </div> -->
-
-<!-- category button -->
-<!-- <button
-            id="navChooseBtn"
-            class="btn btn-grey-light p-2 px-3 fs-5 d-flex justify-content-center align-items-center gap-3"
-          >
-            Category
-            <i class="fa-solid fa-angle-down"></i>
-          </button> -->
-
-<!-- category list -->
-<!-- <div class="dropdown-content rounded-2 bg-light p-2 shadow">
-            <a
-              href="#"
-              class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
-              ><i class="fa-solid fa-image"></i> Photos</a
-            >
-            <a
-              href="#"
-              class="gap-2 text-dark text-decoration-none d-block p-2 rounded-2"
-            >
-              <i class="fa-solid fa-video"></i> Videos</a
-            >
-          </div> -->
-
-<!-- <select name="category" value="Choose" id="navCategoryList">
-            <option value="Photos">Photos</option>
-            <option value="Videos">Videos</option>
-          </select> -->
