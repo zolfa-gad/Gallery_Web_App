@@ -1,6 +1,5 @@
 function userLogIn(event) {
   event.preventDefault();
-  console.log(event.target.querySelector("#email-input"));
 
   let email = event.target.querySelector("#email-input");
   let emailError = event.target.querySelector("#email-error");
@@ -41,26 +40,16 @@ function userLogIn(event) {
       passwordError.innerText = check;
       passwordError.classList.remove("visually-hidden");
     }
-    // check in local storage
-    // if (checkIfDataFoundInLocalStorage(email)) {
-    //   location.replace("index.html");
-    // }
   }
 }
 
 function checkIfDataFoundInLocalStorage(email, password) {
   let users = JSON.parse(localStorage.getItem("usersData"));
-  //   let users = [{ email: "mohamedata@gmail.com", password: "sdfdscfdfdsf" }];
-  console.log(users);
   let result = "";
   if (users != null) {
     let foundUser = users.find((item) => item.email == email);
     if (foundUser) {
-      console.log(foundUser);
       if (foundUser.password == password) {
-        // if equal go to next page
-        // else if password is wrong
-        console.log(foundUser);
         result = true;
         sessionStorage.setItem("currentUser", JSON.stringify(foundUser));
       } else {

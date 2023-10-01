@@ -13,7 +13,6 @@
   </head>
   <body class="h-100 bg-color">
     <!------------------------------------ main home background ------------------------>
-    <!-- <figure id="homeImage" class="vh-100 position-relative"></figure> -->
 
     <!-------------------------------- main section --------------------------------------->
     <main id="logInContent" class="top-0 w-100 h-100 position-absolute">
@@ -24,37 +23,47 @@
         <div
           class="bg-light rounded-3 shadow-lg bg-gradient col-md-8 d-flex flex-column justify-content-center align-items-center p-5 text-justify"
         >
-          <h2 class="fs-1 fw-bolder text-blue-dark">Welcome Again</h2>
+          <h2 class="fs-1 fw-bolder text-blue-dark p-3">Welcome Again</h2>
           <form
             onsubmit="userLogIn(event)"
-            class="w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-start"
+            class="w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-start gap-3"
           >
-            <label class="fs-4 py-2" for="email-input">Email</label>
-            <input
-              id="email-input"
-              class="form-control form-control-lg mx-1"
-              type="email"
-              placeholder="Enter Your Email"
-            />
-            <span id="email-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Email</span
-            >
-
-            <label class="fs-4 py-2" for="password-input">Password</label>
-            <div class="d-flex justify-content-center align-items-center w-100">
+            <div class="w-100">
               <input
-                id="password-input"
+                id="email-input"
                 class="form-control form-control-lg mx-1"
-                type="password"
-                placeholder="Enter Your Password"
+                type="email"
+                placeholder="Email"
               />
-              <span class="border border-1 p-2 btn" onclick="togglePassword()">
-                <i id="password-icon" class="fa fa-eye-slash fa-xl"></i
-              ></span>
+              <span id="email-error" class="px-3 text-danger visually-hidden">
+                Please Enter Your Email
+              </span>
             </div>
-            <span id="password-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Password</span
-            >
+
+            <div class="w-100">
+              <div
+                class="d-flex justify-content-center align-items-center w-100"
+              >
+                <input
+                  id="password-input"
+                  class="form-control form-control-lg mx-1"
+                  type="password"
+                  placeholder="Password"
+                />
+                <span
+                  class="border border-1 p-2 btn"
+                  onclick="togglePassword()"
+                >
+                  <i id="password-icon" class="fa fa-eye-slash fa-xl"></i>
+                </span>
+              </div>
+              <span
+                id="password-error"
+                class="px-3 text-danger visually-hidden"
+              >
+                Please Enter Your Password
+              </span>
+            </div>
 
             <button
               class="btn btn-dark px-5 py-2 fs-5 align-self-center mt-4"
@@ -68,8 +77,9 @@
                 href="#"
                 class="fs-5 text-blue-dark px-2"
                 onclick="location.replace('../register/register.html')"
-                >Register</a
               >
+                Register
+              </a>
             </div>
           </form>
         </div>
