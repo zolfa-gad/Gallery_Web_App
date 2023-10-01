@@ -12,9 +12,6 @@
     <title>Register</title>
   </head>
   <body class="h-100 bg-color">
-    <!------------------------------------ main home background ------------------------>
-    <!-- <figure id="homeImage" class="vh-100 position-relative"></figure> -->
-
     <!-------------------------------- main section --------------------------------------->
     <main id="registerContent" class="top-0 w-100 h-100 position-absolute">
       <!-------------------------- paragraph main section -------------------------------->
@@ -24,76 +21,106 @@
         <div
           class="bg-light rounded-3 shadow-lg bg-gradient col-md-8 d-flex flex-column justify-content-center align-items-center p-5 text-justify"
         >
-          <h2 class="fs-1 fw-bolder text-blue-dark">Welcome</h2>
+          <h2 class="fs-1 fw-bolder text-blue-dark p-3">Welcome</h2>
           <form
             onsubmit="userRegister(event)"
-            class="w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-start"
+            class="w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-start gap-3"
           >
             <!------------------------------ name input ------------------------->
-            <label class="fs-4 py-2" for="name-input">Name</label>
-            <input
-              id="name-input"
-              class="form-control form-control-lg mx-1"
-              type="name"
-              placeholder="Enter Your Name"
-            />
-            <span id="name-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Name</span
-            >
+            <div class="w-100">
+              <input
+                id="first-name-input"
+                class="form-control form-control-lg mx-1"
+                type="name"
+                placeholder="First Name"
+              />
+              <span
+                id="first-name-error"
+                class="px-3 text-danger visually-hidden"
+              >
+                Please Enter Your First Name
+              </span>
+            </div>
+
+            <div class="w-100">
+              <input
+                id="last-name-input"
+                class="form-control form-control-lg mx-1"
+                type="name"
+                placeholder="Last Name"
+              />
+              <span
+                id="last-name-error"
+                class="px-3 text-danger visually-hidden"
+              >
+                Please Enter Your Last Name
+              </span>
+            </div>
 
             <!------------------------------ email input ------------------------->
-            <label class="fs-4 py-2" for="email-input">Email</label>
-            <input
-              id="email-input"
-              class="form-control form-control-lg mx-1"
-              type="email"
-              placeholder="Enter Your Email"
-            />
-            <span id="email-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Email</span
-            >
+            <div class="w-100">
+              <input
+                id="email-input"
+                class="form-control form-control-lg mx-1"
+                type="email"
+                placeholder="Email"
+              />
+              <span id="email-error" class="px-3 text-danger visually-hidden">
+                Please Enter Your Email
+              </span>
+            </div>
 
             <!------------------------------ password input ------------------------->
-            <label class="fs-4 py-2" for="password-input">Password</label>
-            <div class="d-flex justify-content-center align-items-center w-100">
-              <input
-                id="password-input"
-                class="form-control form-control-lg mx-1"
-                type="password"
-                placeholder="Enter Your Password"
-              />
-              <span
-                class="border border-1 p-2 btn"
-                onclick="togglePassword('password')"
+            <div class="w-100">
+              <div
+                class="d-flex justify-content-center align-items-center w-100"
               >
-                <i id="password-icon" class="fa fa-eye-slash fa-xl"></i
-              ></span>
+                <input
+                  id="password-input"
+                  class="form-control form-control-lg mx-1"
+                  type="password"
+                  placeholder="Password"
+                />
+                <span
+                  class="border border-1 p-2 btn"
+                  onclick="togglePassword('password')"
+                >
+                  <i id="password-icon" class="fa fa-eye-slash fa-xl"></i>
+                </span>
+              </div>
+              <span
+                id="password-error"
+                class="px-3 text-danger visually-hidden"
+              >
+                Please Enter Your Password
+              </span>
             </div>
-            <span id="password-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Password</span
-            >
 
             <!------------------------------ repassword input ------------------------->
-            <label class="fs-4 py-2" for="repassword-input"
-              >Re-enter Password</label
-            >
-            <div class="d-flex justify-content-center align-items-center w-100">
-              <input
-                id="repassword-input"
-                class="form-control form-control-lg mx-1"
-                type="password"
-                placeholder="Enter Your Password Again"
-              />
-              <span
-                class="border border-1 p-2 btn"
-                onclick="togglePassword('repassword')"
+            <div class="w-100">
+              <div
+                class="d-flex justify-content-center align-items-center w-100"
               >
-                <i id="repassword-icon" class="fa fa-eye-slash fa-xl"></i
-              ></span>
+                <input
+                  id="repassword-input"
+                  class="form-control form-control-lg mx-1"
+                  type="password"
+                  placeholder="Confirm Password"
+                />
+                <span
+                  class="border border-1 p-2 btn"
+                  onclick="togglePassword('repassword')"
+                >
+                  <i id="repassword-icon" class="fa fa-eye-slash fa-xl"></i>
+                </span>
+              </div>
+              <span
+                id="repassword-error"
+                class="px-3 text-danger visually-hidden"
+              >
+                Please Enter Your Password Again
+              </span>
             </div>
-            <span id="repassword-error" class="px-3 text-danger visually-hidden"
-              >Please Enter Your Password</span
-            >
 
             <!------------------------------ submit button ------------------------->
             <button

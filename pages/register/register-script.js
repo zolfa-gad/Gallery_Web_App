@@ -4,10 +4,11 @@ if (JSON.parse(localStorage.getItem("usersData"))) {
 }
 function userRegister(event) {
   event.preventDefault();
-  // console.log(event.target.querySelector("#email-input"));
 
-  let name = event.target.querySelector("#name-input");
-  let nameError = event.target.querySelector("#name-error");
+  let firstName = event.target.querySelector("#first-name-input");
+  let firstNameError = event.target.querySelector("#first-name-error");
+  let lastName = event.target.querySelector("#last-name-input");
+  let lastNameError = event.target.querySelector("#last-name-error");
   let email = event.target.querySelector("#email-input");
   let emailError = event.target.querySelector("#email-error");
   let password = event.target.querySelector("#password-input");
@@ -15,15 +16,16 @@ function userRegister(event) {
   let repassword = event.target.querySelector("#repassword-input");
   let repasswordError = event.target.querySelector("#repassword-error");
 
-  let isValidName = false;
+  let isValidFirstName = false;
+  let isValidLastName = false;
   let isValidEmail = false;
   let isValidPassword = false;
   let isValidRePassword = false;
 
-  //   console.log(checkIfUserAlreadyHaveAccount(email, repasswordError));
 
   if (!checkIfUserAlreadyHaveAccount(email, repasswordError)) {
-    isValidName = checkValidName(name, nameError);
+    isValidFirstName = checkValidFirstName(firstName, firstNameError);
+    isValidLastName = checkValidLastName(lastName, lastNameError);
     isValidEmail = checkValidEmail(email, emailError);
     isValidPassword = checkValidPassword(password, passwordError);
     isValidRePassword = checkValidRePassword(
@@ -33,16 +35,19 @@ function userRegister(event) {
     );
   }
 
-  // should check if he alreday has an account
 
-  if (isValidEmail && isValidPassword && isValidName && isValidRePassword) {
-    // console.log(string[0].toUpperCase() + string.slice(1));
+  if (
+    isValidEmail &&
+    isValidPassword &&
+    isValidFirstName &&
+    isValidLastName &&
+    isValidRePassword
+  ) {
     let user = {
       id: Math.floor(Math.random() * 100),
-      name: name.value[0].toUpperCase() + name.value.slice(1),
+      name: `${firstName.value} ${lastName.value}`,
       email: email.value,
       password: password.value,
-      // favourites: [],
       photos: [],
       videos: [],
     };
@@ -51,52 +56,57 @@ function userRegister(event) {
     localStorage.setItem("usersData", JSON.stringify(usersData));
     sessionStorage.setItem("currentUser", JSON.stringify(user));
 
-    // push user to local storage
-    // let check = checkIfDataFoundInLocalStorage(email.value, password.value);
-    // if (check == true) {
-    //   location.replace("index.html");
-    // } else {
-    //   passwordError.innerText = check;
-    //   passwordError.classList.remove("visually-hidden");
-    // }
-    // check in local storage
-    // if (checkIfDataFoundInLocalStorage(email)) {
-    //   location.replace("index.html");
-    // }
+
   }
 }
 
-function checkValidName(name, nameError) {
-  let check = name.value.match(/^[a-zA-Z]+ [a-zA-Z]+$/gi);
-  if (!name.value) {
-    nameError.innerText = "Please enter your name";
-    nameError.classList.remove("visually-hidden");
+function checkValidFirstName(firstName, firstNameError) {
+  if (!firstName.value) {
+    firstNameError.innerText = "Please enter your first name";
+    firstNameError.classList.remove("visually-hidden");
     return false;
-  } else if (!check) {
-    nameError.innerText = "Please enter a valid name first and last name";
-    nameError.classList.remove("visually-hidden");
+  } else if (firstName.value.includes(" ")) {
+    firstNameError.innerText =
+      "Please enter a valid name, name can not contain spaces";
+    firstNameError.classList.remove("visually-hidden");
     return false;
   } else {
-    nameError.classList.add("visually-hidden");
+    firstNameError.classList.add("visually-hidden");
+    return true;
+  }
+}
+
+function checkValidLastName(lastName, lastNameError) {
+  if (!lastName.value) {
+    lastNameError.innerText = "Please enter your last name";
+    lastNameError.classList.remove("visually-hidden");
+    return false;
+  } else if (lastName.value.includes(" ")) {
+    lastNameError.innerText =
+      "Please enter a valid name, name can not contain spaces";
+    lastNameError.classList.remove("visually-hidden");
+    return false;
+  } else {
+    lastNameError.classList.add("visually-hidden");
     return true;
   }
 }
 
 function checkValidEmail(email, emailError) {
-  let check = email.value.match(/^[a-zA-Z0-9]+@[a-z]+\.[a-z]{3}$/gi);
+  let check = email.value.match(/^[a-zA-Z0-9\.-_]+@[a-z]+\.[a-z]+$/gi);
 
   if (!email.value) {
     emailError.innerText = "Please enter your email";
     emailError.classList.remove("visually-hidden");
     return false;
   } else if (!check) {
-    emailError.innerText = "Please enter a valid email";
+    emailError.innerText =
+      "Please enter a valid email, email can only contain letters, numbers and special characters dot: '.' , dash: '-' , underscore: '_'";
     emailError.classList.remove("visually-hidden");
     return false;
   } else if (check) {
     emailError.classList.add("visually-hidden");
     return true;
-    // isValidEmail = true;
   }
 }
 
@@ -112,17 +122,16 @@ function checkValidPassword(password, passwordError) {
   } else if (password.value.length >= 8) {
     passwordError.classList.add("visually-hidden");
     return true;
-    // isValidPassword = true;
   }
 }
 
 function checkValidRePassword(repassword, repasswordError, password) {
   if (!repassword.value) {
-    repasswordError.innerText = "Please enter your password again";
+    repasswordError.innerText = "Please confirm your password";
     repasswordError.classList.remove("visually-hidden");
     return false;
   } else if (repassword.value != password.value) {
-    repasswordError.innerText = "Please enter a matched password";
+    repasswordError.innerText = "Passwords should be matched";
     repasswordError.classList.remove("visually-hidden");
     return false;
   } else if (repassword.value == password.value) {
@@ -133,7 +142,6 @@ function checkValidRePassword(repassword, repasswordError, password) {
 
 function checkIfUserAlreadyHaveAccount(email, repasswordError) {
   let found = usersData.find((item) => item.email == email);
-  console.log(found, "found email");
 
   if (found == undefined) {
     repasswordError.innerText = "this email already registered";
