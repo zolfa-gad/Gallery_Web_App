@@ -1,5 +1,5 @@
 const userImageElement =
-  '<img id="userImage" src="../../images/anonymous-avatar-icon-25.jpg" width="100%" height="100%" class="rounded-circle" />';
+  '<img id="userImage" src="./images/anonymous-avatar-icon-25.jpg" width="100%" height="100%" class="rounded-circle" />';
 
 const userLettersElement =
   '<span id="userLetters" class="fs-5 fw-bold text-light"> UN </span>';
@@ -107,7 +107,7 @@ function onSearchClick(type) {
 
 //---------------------------------- go to profile ------------------------------//
 profileLogo.addEventListener("click", () => {
-  location.href = "../profile/profile.html";
+  location.href = "./pages/profile/profile.html";
 });
 
 //---------------------------------- get data from api ------------------------------//
@@ -352,7 +352,7 @@ async function showPopUpWindow(
       <figure id="photographer-image" class="m-0">
         <img
           class="rounded-circle shadow-lg"
-          src="../../images/anonymous-avatar-icon-25.jpg"
+          src="./images/anonymous-avatar-icon-25.jpg"
           style="width: 100px; height: 100px"
         />
       </figure>
@@ -407,7 +407,7 @@ function onLogOutClick() {
 }
 
 function onLogInClick() {
-  location.replace("../log-in/log-in.html");
+  location.replace("./pages/log-in/log-in.html");
 }
 
 logButton.addEventListener("click", function (event) {

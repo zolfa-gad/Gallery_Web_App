@@ -52,7 +52,7 @@ function userRegister(event) {
       videos: [],
     };
     usersData.push(user);
-    location.replace("../index/index.html");
+    location.replace("../../index.html");
     localStorage.setItem("usersData", JSON.stringify(usersData));
     sessionStorage.setItem("currentUser", JSON.stringify(user));
 

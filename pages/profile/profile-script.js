@@ -177,7 +177,7 @@ function controlVideo(event, type) {
 
 //--------------------------------- navigate to home -----------------------------//
 function onHomeNavigate() {
-  location.href = "../index/index.html";
+  location.href = "../../index.html";
 }
 
 function removeFavouritePhoto(event) {

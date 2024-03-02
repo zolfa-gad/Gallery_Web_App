@@ -35,7 +35,7 @@ function userLogIn(event) {
     let check = checkIfDataFoundInLocalStorage(email.value, password.value);
 
     if (check == true) {
-      location.replace("../index/index.html");
+      location.replace("../../index.html");
     } else {
       passwordError.innerText = check;
       passwordError.classList.remove("visually-hidden");
